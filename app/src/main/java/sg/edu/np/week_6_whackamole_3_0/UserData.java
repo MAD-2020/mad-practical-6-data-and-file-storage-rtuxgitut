@@ -3,23 +3,37 @@ package sg.edu.np.week_6_whackamole_3_0;
 import java.util.ArrayList;
 
 public class UserData {
-
     /* NOTE:
             THIS OBJECT DATA IS GIVEN.
             DO NOT CHANGE ANYTHING IN HERE.
             YOU ARE TO USE THIS UserData as it is in your answers.
-
         The UserData consist of the following:
         1. UserName
         2. Password
         3. A list of Scores related to a list of corresponding Levels
         4. A list of Levels related to a list of corresponding Scores
-
      */
     private String MyUserName;
     private String MyPassword;
     private ArrayList<Integer> Scores = new ArrayList<>();
     private ArrayList<Integer> Levels = new ArrayList<>();
+
+    public static final String TABLE_NAME = "Accounts";
+    public static final String COLUMN_USER_NAME = "Username";
+    public static final String COLUMN_USER_PASSWORD = "Password";
+    public static final String COLUMN_USER_SCORES = "Score";
+    public static final String COLUMN_USER_LEVELS = "Level";
+
+    public static final String CREATE_USERS_TABLE =
+            "CREATE TABLE " + TABLE_NAME + " (" +
+                    COLUMN_USER_NAME + " TEXT," +
+                    COLUMN_USER_PASSWORD + " TEXT," +
+                    COLUMN_USER_LEVELS  + " INTEGER," +
+                    COLUMN_USER_SCORES + " INTEGER," +
+                    "PRIMARY KEY (" + COLUMN_USER_NAME + "," +COLUMN_USER_LEVELS + ")" + ");";
+
+    public static final String DROP_USERS_TABLE =
+            "DROP TABLE IF EXISTS " + TABLE_NAME;
 
     public UserData()
     {
